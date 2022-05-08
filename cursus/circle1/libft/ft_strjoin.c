@@ -12,26 +12,24 @@
 
 #include <stdio.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
 	char *str;
 	int i;
-	
-	if(!s)
-		return NULL;
-	if(start > ft_strlen(s))
-		return ""
-	if(len>ft_strlen(s)-start)
-		len=ft_strlen(s)-start;
+	int l;
+	int r;
+	l=0;
+	r=0;
+	i=0;
+	int len;
+	len=ft_strlen(s1)+ft_strlen(s2);
 	str=malloc(len+1);
 	if(!str)
 		return NULL;
-	i = 0;
-	while(i<len)
-	{
-		str[i]=s[start+i];
-		i++;
-	}
+	while(s1[l]!='\0')
+		str[i++]=s1[l++];
+	while(s2[r]!='\0')
+		str[i++]=s2[r++];
 	str[i]='\0';
 	return str;
 }

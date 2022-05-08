@@ -12,26 +12,16 @@
 
 #include <stdio.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	char *str;
-	int i;
+	int l;
+	int r;
 	
-	if(!s)
-		return NULL;
-	if(start > ft_strlen(s))
-		return ""
-	if(len>ft_strlen(s)-start)
-		len=ft_strlen(s)-start;
-	str=malloc(len+1);
-	if(!str)
-		return NULL;
-	i = 0;
-	while(i<len)
-	{
-		str[i]=s[start+i];
-		i++;
-	}
-	str[i]='\0';
-	return str;
-}
+	l=0;	
+	while(s1[l] && ft_strchr(set,s1[l]))
+		l++;
+	r=ft_strlen(s1);
+	while(ft_strchr(set,s1[r])
+		r--;
+	return ft_substr(s1,l,r-l+1);
+}	
