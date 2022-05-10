@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/10 19:23:13 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-int ft_atoi(char *str)
+
+int	ft_atoi(char *str)
 {
-	int i=0;
+	int	i=0;
 	int sign=1;
 	int num=0;
 	while(str[i]==' '|| str[i]=='\t' || str[i]=='\r' ||str[i]=='\n'||str[i]=='\v' ||str[i]=='\f')
@@ -34,7 +35,7 @@ int ft_atoi(char *str)
 	return num*sign;
 }
 
-int main()
+int main(void)
 {
 	printf("Enter the string ");
 	char temp[20];
