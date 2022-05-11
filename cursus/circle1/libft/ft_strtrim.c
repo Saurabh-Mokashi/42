@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int l;
 	int r;
 	
 	l=0;	
-	while(s1[l] && ft_strchr(set,s1[l]))
+	while (s1[l] && ft_strchr(set, s1[l]))
 		l++;
-	r=ft_strlen(s1);
-	while(ft_strchr(set,s1[r])
+	r = ft_strlen(s1);
+	while (ft_strchr(set, s1[r]))
 		r--;
-	return ft_substr(s1,l,r-l+1);
+	return (ft_substr(s1,l,r-l+1));
 }	

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memmove(void *str1, void *str2, size_t n)
+void    *ft_memmove(void *str1, void *str2, size_t n)
 {
 	
 }

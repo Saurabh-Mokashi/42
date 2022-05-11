@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i=0;
+	int i;
 	char *ptr;
-	ptr=s;
-	while(s[i])
+
+	i = 0;
+	ptr = s;
+	while (s[i])
 	{
-		if(s[i]==c)
+		if (s[i] == c)
 		{
-			return ptr;
+			return (ptr);
 		}
 		i++;
 		ptr++;
@@ -29,8 +31,5 @@ char *ft_strchr(const char *s, int c)
 /*	if (c==0)
 		return s;
 */
-	return NULL;
+	return (NULL);
 }
-
-
-

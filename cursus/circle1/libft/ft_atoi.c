@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
@@ -33,13 +33,4 @@ int	ft_atoi(char *str)
 		i=i+1;
 	}
 	return num*sign;
-}
-
-int main(void)
-{
-	printf("Enter the string ");
-	char temp[20];
-	scanf("%s",temp);
-	printf("The value is %d\n",ft_atoi(temp));
-	
 }

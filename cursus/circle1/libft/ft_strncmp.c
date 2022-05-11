@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,21 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int i;
-	i=0;
-	while(n--)
-	{
-		char p1;
-		char p2;
-		p1=s1[i]!='\0'?s1[i]:NULL;
-		p2=s2[i]!='\0'?s2[i]:NULL;
-		if(p1!=p2)
-			return p1-p2;
+	char p1;
+	char p2;
+
+	i = 0;
+	while (n--)
+	{	
+		p1 = s1[i] != '\0'?s1[i]:NULL;
+		p2 = s2[i] != '\0'?s2[i]:NULL;
+		if (p1 != p2)
+			return (p1-p2);
 		i++;
 	}
-	return 0;
+	return (0);
 }

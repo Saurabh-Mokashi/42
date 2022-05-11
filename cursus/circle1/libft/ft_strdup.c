@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char *s1;
 	int i;
 	
-	i=ft_strlen(s);
-	s1=malloc(i+1);
-	if(!s1)
-		return NULL;
-	ft_memcpy(s1,s,i);
-	s1[i]='\0';
-	retun s1;
+	i = ft_strlen(s);
+	s1 = malloc(i+1);
+	if (!s1)
+		return (NULL);
+	ft_memcpy(s1, s, i);
+	s1[i] = '\0';
+	return (s1);
 }		

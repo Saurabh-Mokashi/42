@@ -1,1 +1,6 @@
-Name = libft.a
+NAME = libft.a
+all : *.c
+clean :
+fclean :
+re :
+bonus :

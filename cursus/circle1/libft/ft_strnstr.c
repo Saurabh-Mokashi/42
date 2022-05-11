@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,35 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *strnstr(const char *big, const char *little, size_t len)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
 	int i;
 	int l;
 	int j;
-	l=0;
-	i=0;
-	if(!little[0])
-		return big;
-	while(i<len)
+	char *ptr;
+
+	l = 0;
+	i = 0;
+	if (!little[0])
+		return (big);
+	while (i < len)
 	{
-		l=0;
-		if(big[i]==little[l])
+		l = 0;
+		if (big[i] == little[l])
 		{
-			char *ptr;
-			ptr=&big[i];
-			j=i;
-			while(big[j]==little[l] && j<len && little[l])
+			ptr = &big[i];
+			j = i;
+			while (big[j] == little[l] && j < len && little[l])
 			{
 				j++;
 				l++;
 			}
-			if(little[l]=='\0')
-				return ptr;
+			if(little[l] == '\0')
+				return (ptr);
 		}
 		i++;
 	}
-	return 0;
+	return (0);
 }
-							

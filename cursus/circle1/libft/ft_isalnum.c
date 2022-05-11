@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int ft_isalnum(int charac)
 {
-	if(ft_isalpha(charac) || ft_isdigit(charac))
-		return 1;
-	return 0;
+	if (ft_isalpha(charac) || ft_isdigit(charac))
+		return (1);
+	return (0);
 }
