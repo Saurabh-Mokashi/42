@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/12 19:09:15 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char    *memalloc(char *s,char c)
     i=0;
     while (s[i] && s[i] != c)
         i++;
-    ptr = malloc ((char*)*(i + 1));
+    ptr = malloc (sizeof(char *) * (i + 1));
     if (!ptr)
         return (NULL);
     i = 0;
@@ -52,16 +52,18 @@ char    *memalloc(char *s,char c)
     return (ptr);
 }
 
-char    **ft_split(char const *s, char c)
+char    **ft_split(char const *p, char c)
 {
     char **str;
     int i;
+    char *s;
 
-    i=0;
+    i = 0;
+    s = (char *)p;
     if (!s)
         return (NULL);
-    int word = getwords(s,c)
-    str = (char**)malloc (sizeof(char*) * (word + 1))
+    int word = getwords(s,c);
+    str = (char**)malloc (sizeof(char*) * (word + 1));
     if (!str)
         return (NULL);
     while (*s)

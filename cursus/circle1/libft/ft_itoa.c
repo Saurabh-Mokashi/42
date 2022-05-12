@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/12 18:52:15 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:05:56 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,29 @@ int signchecker(char *ptr, int size, int sign)
     }
     return (size);//return sign==-1?size:size-1
 }
+char    *charcheck(int size, int sign)
+{
+    char *ptr;
+
+    if(sign==-1)
+        ptr = (char*)malloc(sizeof(char*) * (size + 2));
+    else
+        ptr = (char*)malloc(sizeof(char*) * (size + 1));
+    return (ptr);
+}
 char *ft_itoa(int n)
 {
     char *ptr;
     int sign;
-    int size; 
+    int size;
+    int nsize;
 
     sign = 1;
     size = ft_size(n);
     if (n < 0)
         sign = -1;
-    ptr = sign == -1?(char*)malloc((char*)*(size+2)):(char*)malloc((char*)*(size+1));
+    //ptr = sign == -1?(char*)malloc((char*)*(size+2)):(char*)malloc((char*)*(size+1));
+    ptr = charcheck(size, sign);
     if (!ptr)
         return (NULL);
     nsize = signchecker(ptr, size, sign);
