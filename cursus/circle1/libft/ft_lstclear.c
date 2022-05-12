@@ -6,11 +6,18 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:39:18 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/10 16:58:52 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:18:04 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	change(t_list *ptr, void (*del)(void *))
+{
+	if (ptr->next != NULL)
+		change(ptr->next, del);
+	ft_lstdelone(ptr, del);
+}
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -18,11 +25,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	temp = *lst;
 	change(temp, del);
-}
-
-void	change(t_list *ptr, void (*del)(void *))
-{
-	if (ptr->next != NULL)
-		change(ptr->next, del);
-	ft_lstdelone(ptr, del);
 }

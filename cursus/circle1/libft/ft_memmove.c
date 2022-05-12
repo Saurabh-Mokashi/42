@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/12 17:55:21 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:19:57 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 		s1[i] = tmp[i];
 		i++;
 	}
+	free(tmp);
 	return ((void *)s1);
 }

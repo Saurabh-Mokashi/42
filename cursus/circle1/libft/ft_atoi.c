@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/10 19:23:13 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:29:15 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,28 @@
 
 int	ft_atoi(char *str)
 {
-	int	i=0;
-	int sign=1;
-	int num=0;
-	while(str[i]==' '|| str[i]=='\t' || str[i]=='\r' ||str[i]=='\n'||str[i]=='\v' ||str[i]=='\f')
+	int	i;
+	int	sign;
+	int	num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r' || str[i] == '\n' \
+			||str[i] == '\v' || str[i] == '\f')
 		i++;
-	if(str[i]=='-'||str[i]=='+')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i]=='-')
-			sign=-1;
+		if (str[i] == '-')
+			sign = -1;
 		else
-			sign=1;
+			sign = 1;
 		i++;
 	}
-	while(str[i]>='0'&&str[i]<='9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num=num*10 + (str[i]-'0');
-		i=i+1;
+		num = (num * 10) + (str[i] - '0');
+		i = i + 1;
 	}
-	return num*sign;
+	return (num * sign);
 }

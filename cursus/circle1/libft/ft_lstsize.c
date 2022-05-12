@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:15:17 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/10 14:24:15 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:16:45 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int		i;
 
 	i = 0;
-	while (*lst)
+	while (lst != NULL)
 	{
 		i++;
 		lst = lst->next;
