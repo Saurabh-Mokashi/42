@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/12 17:57:17 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *destination, const char *source, size_t n)
 {
-	int i;
-	unsigned int len;
+	size_t			i;
+	unsigned int	len;
 
 	len = ft_strlen(source);
 	if (!n)

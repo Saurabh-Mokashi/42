@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/12 17:58:16 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	int dlen;
-	int slen;
-	int i;
+	size_t dlen;
+	size_t slen;
+	size_t i;
 
 	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);

@@ -1,19 +1,26 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Created: 2022/05/12 18:27:00 by smokashi          #+#    #+#             */
+/*   Updated: 2022/05/12 18:27:27 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *p1, const void *p2, size_t n)
 {
+	char	*s1;
+	char	*s2;
+	int		i;
+
+	i = 0;
+	s1 = (char *)p1;
+	s2 = (char *)p2;
 	if (n==0)
 		return (0);
 	while (n--)

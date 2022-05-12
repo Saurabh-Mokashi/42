@@ -1,18 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/12 17:55:21 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *str1, void *str2, size_t n)
+void	*ft_memmove(void *dst, void *src, size_t n)
 {
-	
+	char	*s1;
+	char	*s2;
+	char	*tmp;
+	size_t	i;
+
+	s1 = (char *)dst;
+	s2 = (char *)src;
+	i = 0;
+	tmp = malloc(sizeof(char *) *(n + 1));
+	while (i < n)
+	{
+		tmp[i] = s2[i];
+		i++;
+	}
+	tmp[i] = '\0';
+	i = 0;
+	while (tmp[i] != '\0')
+	{
+		s1[i] = tmp[i];
+		i++;
+	}
+	return ((void *)s1);
 }

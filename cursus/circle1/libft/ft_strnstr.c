@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2020/04/14 18:13:45 by jwon             ###   ########.fr       */
+/*   Updated: 2022/05/12 18:45:14 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 char	*strnstr(const char *big, const char *little, size_t len)
 {
-	int i;
-	int l;
-	int j;
-	char *ptr;
+	size_t	i;
+	int		l;
+	size_t	j;
+	char	*ptr;
 
 	l = 0;
 	i = 0;
 	if (!little[0])
-		return (big);
+		return ((char *)big);
 	while (i < len)
 	{
 		l = 0;
 		if (big[i] == little[l])
 		{
-			ptr = &big[i];
+			ptr = (char *)&big[i];
 			j = i;
 			while (big[j] == little[l] && j < len && little[l])
 			{
