@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/13 15:59:09 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:25:39 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 void	*ft_memchr(const void *p, int c, size_t n)
 {
-	int		*s;
+	char	*s;
 	int		i;
 
-	s = (int *)p;
-	printf("%d",s[0]);
+	s = (char *)p;
 	i = 0;
 	while (n > 0 && s[i] != '\0')
 	{
 		if (s[i] == (c))
-			return ((void *)s);
+			return ((void *)&s[i]);
 		i++;
 		n--;
 	}
 	return (NULL);
 }
+
 int main(void)
 {
-	char *str = "bonjour";
-	char ptr = 'b';
-	printf("%s",ft_memchr((const void *)str,ptr,3));
+	char *str = "bonjourno";
+	char ptr = 'j';
+	printf("%s",ft_memchr((const void *)str,ptr,6));
 	return (0);
 }
 
