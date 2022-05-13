@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:39:07 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/12 16:05:10 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:35:55 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h> 
 # include <stdio.h>
 # include <stdlib.h>
-# include <stdint.h>
 # include <string.h>
 
 typedef struct s_list
@@ -25,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int		ft_atoi(char	*str);
+int		ft_atoi(const char	*str);
 void	ft_bzero(void *s, int n);
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_isalnum(int charac);
@@ -62,7 +61,7 @@ size_t	ft_strlcpy(char *destination, const char *source, size_t n);
 size_t	ft_strlen(const char *str);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

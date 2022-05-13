@@ -6,13 +6,13 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/12 18:45:14 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:15:04 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	int		l;
@@ -35,7 +35,7 @@ char	*strnstr(const char *big, const char *little, size_t len)
 				j++;
 				l++;
 			}
-			if(little[l] == '\0')
+			if (little[l] == '\0')
 				return (ptr);
 		}
 		i++;

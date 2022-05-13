@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 18:27:00 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/12 18:27:27 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/13 13:15:30 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_memcmp(const void *p1, const void *p2, size_t n)
 	while (n--)
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return ((int)s1[i] - s2[i]);
 		i++;
 	}
 	return (0);

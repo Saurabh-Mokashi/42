@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/12 19:30:54 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:38:13 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	void	*ptr;
+	char	*ptr;
 
+	if (nitems == 0 || size == 0)
+		return (NULL);
+	if ((nitems >= SIZE_MAX || size >= SIZE_MAX) && (nitems > 1 || size > 1))
+		return (NULL);
 	ptr = malloc(nitems * size);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, nitems * size);
-	return (ptr);
+	return ((void *)ptr);
 }
