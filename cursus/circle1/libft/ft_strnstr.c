@@ -6,17 +6,34 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/13 10:15:04 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/15 21:00:03 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*biglittle(const char *big, const char *little, size_t len, size_t i)
+{
+	char	*ptr;
+	size_t	l;
+
+	ptr = (char *)&big[i];
+	l = 0;
+	while (big[i] == little[l] && i < len && little[l])
+	{
+		i++;
+		l++;
+	}
+	if (little[l] == '\0')
+		return (ptr);
+	else
+		return (NULL);
+}
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	int		l;
-	size_t	j;
 	char	*ptr;
 
 	l = 0;
@@ -25,20 +42,15 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	while (i < len)
 	{
-		l = 0;
-		if (big[i] == little[l])
+		if (!big[i])
+			return (NULL);
+		if (big[i] == little[0])
 		{
-			ptr = (char *)&big[i];
-			j = i;
-			while (big[j] == little[l] && j < len && little[l])
-			{
-				j++;
-				l++;
-			}
-			if (little[l] == '\0')
+			ptr = biglittle(big, little, len, i);
+			if (ptr != NULL)
 				return (ptr);
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

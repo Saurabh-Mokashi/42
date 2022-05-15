@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/12 18:03:59 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/15 19:13:46 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	const char *ptr;
+	int			i;
+	const char	*ptr;
 
 	i = 0;
 	ptr = s;
@@ -28,8 +28,7 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 		ptr++;
 	}
-/*	if (c==0)
-		return s;
-*/
+	if (*ptr == c)
+		return ((char *)ptr);
 	return (NULL);
 }
