@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:24:39 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/10 14:28:02 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:13:33 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+	{
+		return (NULL);
+	}
 	while (lst->next != NULL)
 	{
 		lst = lst->next;

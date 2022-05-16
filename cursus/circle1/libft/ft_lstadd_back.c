@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:29:13 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/10 15:25:17 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:24:55 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!new)
 		return ;
-	if (!lst)
+	if (!(*lst))
 	{
 		*lst = new;
 		return ;
 	}
 	newt = ft_lstlast(*lst);
 	newt->next = new;
+	new->next = NULL;
 }

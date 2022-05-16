@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:39:18 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/12 19:18:04 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:38:18 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	temp = *lst;
 	change(temp, del);
+	*lst = NULL;
 }
