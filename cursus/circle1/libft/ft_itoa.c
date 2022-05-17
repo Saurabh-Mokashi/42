@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/16 14:50:27 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:40:35 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ int	signchecker(char *ptr, int size, int sign)
 	return (size);
 }
 
-char	*charcheck(int size, int sign)
+static char	*charcheck(int size, int sign)
 {
 	char	*ptr;
 
 	if (sign == -1)
-		ptr = (char *)malloc(sizeof(char *) * (size + 2));
+		ptr = (char *)malloc(sizeof(char) * (size + 2));
 	else
-		ptr = (char *)malloc(sizeof(char *) * (size + 1));
+		ptr = (char *)malloc(sizeof(char) * (size + 1));
 	return (ptr);
 }
 

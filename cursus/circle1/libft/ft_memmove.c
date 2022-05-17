@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/13 13:27:28 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:51:25 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,22 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 {
 	char	*s1;
 	char	*s2;
-	char	*tmp;
-	size_t	i;
 
 	s1 = (char *)dst;
 	s2 = (char *)src;
-	i = 0;
-	tmp = malloc(sizeof(char *) *(n));
-	while (i < n)
+	if (dst <= src)
+		ft_memcpy(dst, src, n);
+	else
 	{
-		tmp[i] = s2[i];
-		i++;
+		s1 = s1 + n - 1;
+		s2 = s2 + n - 1;
+		while (n > 0)
+		{
+			*s1 = *s2;
+			s1--;
+			s2--;
+			n--;
+		}
 	}
-	i = 0;
-	while (i < n)
-	{
-		s1[i] = tmp[i];
-		i++;
-	}
-	free(tmp);
-	return ((void *)s1);
+	return (dst);
 }

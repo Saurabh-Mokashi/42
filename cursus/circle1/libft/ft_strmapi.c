@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:13:28 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/15 21:06:22 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:41:52 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	sz = ft_strlen(s);
-	ptr = (char *)malloc(sizeof(char *) *(sz + 1));
+	ptr = (char *)malloc(sizeof(char) *(sz + 1));
 	while (i < sz)
 	{
 		ptr[i] = (*f)(i, s[i]);
