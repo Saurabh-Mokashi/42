@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/15 19:13:46 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:12:01 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	ptr = s;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			return ((char *)ptr);
 		}

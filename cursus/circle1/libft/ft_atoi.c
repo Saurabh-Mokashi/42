@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/17 18:48:18 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:08:13 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	num;
+	int				sign;
+	unsigned int	num;
 
-	i = 0;
 	sign = 1;
 	num = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r' || str[i] == '\n' \
-			||str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (*str == ' ' || *str == '\t' || *str == '\r' || *str == '\n' \
+			||*str == '\v' || *str == '\f')
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -1;
-		else
-			sign = 1;
-		i++;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		num = (num * 10) + (str[i] - '0');
-		i = i + 1;
+		num = (num * 10) + (*str - '0');
+		str++;
 	}
+	if (num > 2147483647 && sign == 1)
+		return (-1);
+	if (num > 2147483648 && sign == -1)
+		return (0);
 	return (num * sign);
 }

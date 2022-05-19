@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 16:16:42 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/17 19:52:39 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:18:48 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (char *)dest;
 	s = (char *)src;
-	if (!s)
+	if (!s && !d)
 		return (dest);
 	while (n > 0)
 	{

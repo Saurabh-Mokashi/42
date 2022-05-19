@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/17 12:42:55 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:14:15 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *p, int c, size_t n)
 	i = 0;
 	while (n > 0)
 	{
-		if (s[i] == (c))
+		if (s[i] == (char) c)
 			return ((void *)&s[i]);
 		i++;
 		n--;

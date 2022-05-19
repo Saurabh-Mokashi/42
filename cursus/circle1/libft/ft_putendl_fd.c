@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:33:56 by smokashi          #+#    #+#             */
-/*   Updated: 2022/05/13 13:36:21 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:38:38 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	char	c;
 
 	c = '\n';
-	ft_putstr_fd(s, fd);
+	if (s)
+		ft_putstr_fd(s, fd);
 	write(fd, &c, 1);
 }

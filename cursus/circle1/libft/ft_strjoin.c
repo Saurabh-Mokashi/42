@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/15 21:09:25 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:28:45 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	l = 0;
 	r = 0;
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(len + 1);
 	if (!str)

@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 14:27:11 by jwon              #+#    #+#             */
-/*   Updated: 2022/05/16 14:40:40 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:56:13 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,26 @@ int	getwords(char *s, char c)
 {
 	int	i;
 	int	word;
+	int	flag;
 
 	i = 0;
 	word = 0;
+	flag = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c)
-			word++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (!s[i])
+			flag = 1;
+		while (s[i] != c && s[i])
+		{
+			i++;
+		}
+		if (flag == 1)
+			break ;
+		word++;
 	}
-	return (word + 1);
+	return (word);
 }
 
 char	*memalloc(char *s, char c)
@@ -36,7 +46,7 @@ char	*memalloc(char *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	ptr = malloc (sizeof(char *) * (i + 1));
+	ptr = malloc (sizeof(char) * (i + 1));
 	if (!ptr)
 		return (NULL);
 	i = 0;
